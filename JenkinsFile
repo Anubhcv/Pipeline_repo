@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+ 
+    stages {
+        stage('Checkout') {
+            steps {
+                // Clone the repository
+                echo "hi"
+            }
+        }
+        stage('Build') {
+            steps {
+                // Run a build command
+                echo "make build"  // Replace with your build command
+            }
+        }
+        stage('Test') {
+            steps {
+                // Run tests
+                echo 'make test'  // Replace with your test command
+            }
+        }
+        stage('Deploy') {
+            steps {
+                // Deploy the application
+                echo 'make deploy'  // Replace with your deploy command
+            }
+        }
+    }
+ 
+    post {
+        success {
+            echo 'Pipeline succeeded!'
+        }
+        failure {
+            echo 'Pipeline failed.'
+        }
+    }
+}
+ 
+ 
